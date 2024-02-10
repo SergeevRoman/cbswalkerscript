@@ -8,14 +8,15 @@ from driver import driver
 
 def open_page(element):
     webel = WebDriverWait(driver, 10).until(EC.presence_of_element_located(element))
-    webel.click()
-    time.sleep(10)
+    driver.execute_script("arguments[0].click();", webel)
+    # webel.click()
+    time.sleep(1)
 def open_tab(element):
     webel = WebDriverWait(driver, 10).until(EC.presence_of_element_located(element))
     action_chains = ActionChains(driver)
     action_chains.move_to_element(webel).perform()
     time.sleep(1)
-driver.maximize_window()
+driver.set_window_size(1920, 1080)
 
 for i in range(3):
     open_page(pageobject.Uslugi)
