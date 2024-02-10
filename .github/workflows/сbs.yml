@@ -16,14 +16,8 @@ jobs:
        uses: browser-actions/setup-chrome@v1
      - name: Running Chrome
        run: chrome --version
-     - name: Install ChromeDriver
-       run: |
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
-          CHROME_DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-          wget "https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip"
-          unzip chromedriver_linux64.zip
-          chmod +x chromedriver
-          sudo mv chromedriver /usr/local/bin/
+     - name: setup-chromedriver
+       uses: nanasess/setup-chromedriver@v2.2.2
      - name: Checkout Repository
        uses: actions/checkout@v2
      - name: Set up Python
