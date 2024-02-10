@@ -15,7 +15,7 @@ def open_tab(element):
     action_chains = ActionChains(driver)
     action_chains.move_to_element(webel).perform()
     time.sleep(1)
-driver.maximize_window()
+driver.set_window_size(1920, 1080)
 
 for i in range(3):
     open_page(pageobject.Uslugi)
