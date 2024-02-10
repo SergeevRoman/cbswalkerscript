@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Set up Chrome
-       uses: juliangruber/install-chrome@v1
+       uses: authomatic/chromedriver_installer
      - name: Install ChromeDriver
        run: |
           CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
