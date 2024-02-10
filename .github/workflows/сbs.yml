@@ -13,8 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Install Google Chrome
-     - uses: browser-actions/setup-chrome@v1
-     - run: chrome --version
+       uses: browser-actions/setup-chrome@v1
+     - name: Running Chrome
+       run: chrome --version
      - name: Install ChromeDriver
        run: |
           CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
