@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Periodic start 
+
+# Controls when the workflow will run
+on:
+ schedule:
+   - cron: '*/10 * * * *'
+   
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'  # Укажите версию Python, которую вы используете
+
+      - name: Run Python Script
+        run: python cbswalkerscript/script.py 
