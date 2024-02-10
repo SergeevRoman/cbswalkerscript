@@ -21,4 +21,4 @@ jobs:
           python-version: '3.10'  # Укажите версию Python, которую вы используете
 
       - name: Run Python Script
-        run: python cbswalkerscript/script.py 
+        run: python script.py 
